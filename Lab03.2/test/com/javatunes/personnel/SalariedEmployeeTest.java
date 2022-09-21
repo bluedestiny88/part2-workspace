@@ -22,7 +22,6 @@ public class SalariedEmployeeTest {
 
   @Test
   public void testPayTaxes() {
-    double amount = 110000 * SalariedEmployee.SALARIED_TAX_RATE;
-    assertEquals(amount, emp.payTaxes(), 0.001);
+    assertEquals(110000 * SalariedEmployee.SALARIED_TAX_RATE, emp.payTaxes(), 0.001);
   }
 }
