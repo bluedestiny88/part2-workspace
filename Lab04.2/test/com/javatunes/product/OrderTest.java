@@ -36,10 +36,23 @@ public class OrderTest {
    *  For example, create three Order objects: "order-1", "order-2", "order-3."
    *  order-1 is for the contents of productCart,
    *  order-2 is for the contents of musicCart,
-   *  order-3 is for the contents of meduaCart.
+   *  order-3 is for the contents of mediaCart.
    */
   @Test
   public void testProcessCart() {
-    
+    Order order1 = new Order("order-1");
+    order1.processCart(productCart);
+    assertNotNull(order1);
+    assertEquals("order-1", order1.getId());
+
+    Order order2 = new Order("order-2");
+    order2.processCart(musicCart);
+    assertNotNull(order2);
+    assertEquals("order-2", order2.getId());
+
+    Order order3 = new Order("order-3");
+    order3.processCart(mediaCart);
+    assertNotNull(order1);
+    assertEquals("order-3", order3.getId());
   }
 }

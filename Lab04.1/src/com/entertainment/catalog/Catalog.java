@@ -28,7 +28,13 @@ public class Catalog {
    * A no-matches result should be an empty collection (not null).
    */
   public static Collection<Television> findByBrand(String brand) {
-    return null;
+    Collection<Television> tvs = new ArrayList<>();
+    for (Television tv: catalog) {
+      if (tv.getBrand().equals(brand))  {
+        tvs.add(tv);
+      }
+    }
+    return tvs;
   }
   
   /**
@@ -37,7 +43,12 @@ public class Catalog {
    * A no-brands-passed result should be an empty map (not null).
    */
   public static Map<String,Collection<Television>> findByBrands(String... brands) {
-    return null;
+    Map<String, Collection<Television>> result = new HashMap<>();
+    for (String brand : brands)  {
+      result.put(brand, findByBrand(brand));
+    }
+    return result;
+
   }
 
   /**
