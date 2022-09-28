@@ -8,12 +8,14 @@
  */
 package com.javatunes.product;
 
+import com.javatunes.billing.Location;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 
 public class ShoppingCart<T extends Product> {
   // storage for the cart's contents
+
   private Collection<T> items = new ArrayList<T>();  // diamond not used here just to emphasize the T
   
   public double total() {

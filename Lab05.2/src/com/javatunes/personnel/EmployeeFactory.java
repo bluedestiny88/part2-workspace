@@ -25,7 +25,17 @@ public class EmployeeFactory {
   throws IllegalArgumentException {
     // return value
     Employee emp = null;
-    
+    if (!inputMap.get("type").equals("SE") || !inputMap.get("type").equals("HE")) {
+      throw new IllegalArgumentException("Employee must be hourly or salaried");
+    } else {
+      String nameOfEmployee = inputMap.get("name");
+      Date empHireDate = Date.valueOf(inputMap.get("hireDate"));
+    // TODO: 9/26/2022 If type is equal to "HE", then read (and parse) rate and hours from
+    //  inputMap.
+      }
+    // TODO: 9/26/2022 If type is equal to "SE", then read (and parse) salary from inputMap.
+    // TODO: 9/26/2022 Create an instance of HourlyEmployee or SalariedEmployee, with the
+    //  values read from inputMap.
     return emp;
   }
 }
